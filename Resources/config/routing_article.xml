@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing
+        http://symfony.com/schema/routing/routing-1.0.xsd">
+    <route id="gg_team_blog_article_show" path="/{title}" methods="GET">
+        <default key="_controller">GGTeamBlogBundle:Front\Article:show</default>
+    </route>
+    <route id="gg_team_blog_article_search" path="/search/{pattern}" methods="POST">
+        <default key="_controller">GGTeamBlogBundle:Front\Article:search</default>
+    </route>
+    <route id="gg_team_blog_article_search_tag" path="/search/tag/{tag}" methods="POST">
+        <default key="_controller">GGTeamBlogBundle:Front\Article:searchByTag</default>
+    </route>
+</routes>

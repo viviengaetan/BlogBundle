@@ -1,0 +1,23 @@
+{% extends 'GGTeamBlogBundle::layout.html.twig' %}
+
+{% block body %}
+    <header>
+        <h1>Contact</h1>
+    </header>
+
+    <p>Want to contact one of the authors?</p>
+
+    <form action="{{ path('gg_team_blog_contact_home') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_errors(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.subject) }}
+        {{ form_row(form.body) }}
+        {{ form_widget(form._token) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}
