@@ -255,4 +255,4 @@ abstract class Article implements ArticleInterface
 
         return $this;
     }
-} 
+}

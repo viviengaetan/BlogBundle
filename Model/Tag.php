@@ -70,4 +70,4 @@ abstract class Tag implements TagInterface
     {
         return $this->articles;
     }
-} 
+}

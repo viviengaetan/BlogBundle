@@ -10,13 +10,13 @@ use Doctrine\Common\Collections\Collection;
 interface TagInterface
 {
     /**
-     * Returns the tag tag
+     * Returns the tag
      * @return string
      */
     public function getTag();
 
     /**
-     * Set the tag tag
+     * Sets the tag
      * @param string $tag
      * @return TagInterface
      */
@@ -27,4 +27,4 @@ interface TagInterface
      * @return Collection
      */
     public function getArticles();
-} 
+}
