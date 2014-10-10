@@ -16,7 +16,7 @@ interface CommentInterface
     public function getEmail();
 
     /**
-     * Set the comment author mail
+     * Sets the comment author mail
      * @param string $email
      * @return CommentInterface
      */
@@ -29,7 +29,7 @@ interface CommentInterface
     public function getTitle();
 
     /**
-     * Set the comment title
+     * Sets the comment title
      * @param string $title
      * @return CommentInterface
      */
@@ -42,7 +42,7 @@ interface CommentInterface
     public function getBody();
 
     /**
-     * Set the comment body
+     * Sets the comment body
      * @param string $body
      * @return CommentInterface
      */
@@ -55,7 +55,7 @@ interface CommentInterface
     public function isApproved();
 
     /**
-     * Set the state concerning the comment approvemen
+     * Sets the state concerning the comment approvemen
      * @param bool $state
      * @return CommentInterface
      */
@@ -68,7 +68,7 @@ interface CommentInterface
     public function getCreated();
 
     /**
-     * Set the comment creation date
+     * Sets the comment creation date
      * @param \DateTime $date
      * @return CommentInterface
      */
@@ -81,7 +81,7 @@ interface CommentInterface
     public function getUpdated();
 
     /**
-     * Set the comment update date
+     * Sets the comment update date
      * @param \DateTime $date
      * @return CommentInterface
      */
@@ -100,7 +100,7 @@ interface CommentInterface
     public function getParentComment();
 
     /**
-     * Set the parent comment
+     * Sets the parent comment
      * @param CommentInterface $comment
      * @return CommentInterface
      */
@@ -111,4 +111,4 @@ interface CommentInterface
      * @return Collection
      */
     public function getChildrenComments();
-} 
+}

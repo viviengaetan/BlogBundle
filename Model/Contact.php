@@ -51,4 +51,4 @@ class Contact
     {
         $this->body = $body;
     }
-} 
+}

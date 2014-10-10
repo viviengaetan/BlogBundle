@@ -17,7 +17,7 @@ interface ArticleInterface
     public function getAuthor();
 
     /**
-     * Set the article author
+     * Sets the article author
      * @param User $author
      * @return User
      */
@@ -30,7 +30,7 @@ interface ArticleInterface
     public function getCreated();
 
     /**
-     * Set the article creation date
+     * Sets the article creation date
      * @param \DateTime $date
      * @return ArticleInterface
      */
@@ -43,7 +43,7 @@ interface ArticleInterface
     public function getUpdated();
 
     /**
-     * Set the article update date
+     * Sets the article update date
      * @param \DateTime $date
      * @return ArticleInterface
      */
@@ -56,7 +56,7 @@ interface ArticleInterface
     public function getTitle();
 
     /**
-     * Set the article title
+     * Sets the article title
      * @param string $title
      * @return ArticleInterface
      */
@@ -69,7 +69,7 @@ interface ArticleInterface
     public function getBody();
 
     /**
-     * Set the article body
+     * Sets the article body
      * @param string $body
      * @return ArticleInterface
      */
@@ -82,7 +82,7 @@ interface ArticleInterface
     public function getImage();
 
     /**
-     * Set the article image
+     * Sets the article image
      * @param string $image
      * @return ArticleInterface
      */
@@ -95,7 +95,7 @@ interface ArticleInterface
     public function getComments();
 
     /**
-     * Set the article comments
+     * Sets the article comments
      * @param Collection $comments
      * @return ArticleInterface
      */
@@ -122,7 +122,7 @@ interface ArticleInterface
     public function getTags();
 
     /**
-     * Set the article tags
+     * Sets the article tags
      * @param Collection $tags
      * @return ArticleInterface
      */
@@ -141,4 +141,4 @@ interface ArticleInterface
      * @return ArticleInterface
      */
     public function removeTag(TagInterface $tag);
-} 
+}

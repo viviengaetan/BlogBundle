@@ -212,4 +212,4 @@ abstract class Comment implements CommentInterface
     {
         return $this->childrenComments;
     }
-} 
+}
