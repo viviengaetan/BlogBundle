@@ -14,7 +14,7 @@
         <field name="body" column="body" type="text" />
         <field name="image" column="image" type="string" length="255" />
 
-        <many-to-many target-entity="Tag" field="tags" inversed-by="articles">
+        <many-to-many target-entity="Tag" field="tags">
             <cascade>
                 <cascade-all/>
             </cascade>

@@ -34,19 +34,19 @@ class GGTeamBlogBundle extends Bundle
         );
 
         if ($symfonyVersion && class_exists('Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass')) {
-            $container->addCompilerPass(DoctrineOrmMappingsPass::createXmlMappingDriver($mappings, array('fos_user.model_manager_name'), 'fos_user.backend_type_orm'));
+            $container->addCompilerPass(DoctrineOrmMappingsPass::createXmlMappingDriver($mappings, array('gg_team_blog.model_manager_name'), 'gg_team_blog.backend_type_orm'));
         } else {
             $container->addCompilerPass(RegisterMappingsPass::createOrmMappingDriver($mappings));
         }
 
         if ($symfonyVersion && class_exists('Doctrine\Bundle\MongoDBBundle\DependencyInjection\Compiler\DoctrineMongoDBMappingsPass')) {
-            $container->addCompilerPass(DoctrineMongoDBMappingsPass::createXmlMappingDriver($mappings, array('fos_user.model_manager_name'), 'fos_user.backend_type_mongodb'));
+            $container->addCompilerPass(DoctrineMongoDBMappingsPass::createXmlMappingDriver($mappings, array('gg_team_blog.model_manager_name'), 'gg_team_blog.backend_type_mongodb'));
         } else {
             $container->addCompilerPass(RegisterMappingsPass::createMongoDBMappingDriver($mappings));
         }
 
         if ($symfonyVersion && class_exists('Doctrine\Bundle\CouchDBBundle\DependencyInjection\Compiler\DoctrineCouchDBMappingsPass')) {
-            $container->addCompilerPass(DoctrineCouchDBMappingsPass::createXmlMappingDriver($mappings, array('fos_user.model_manager_name'), 'fos_user.backend_type_couchdb'));
+            $container->addCompilerPass(DoctrineCouchDBMappingsPass::createXmlMappingDriver($mappings, array('gg_team_blog.model_manager_name'), 'gg_team_blog.backend_type_couchdb'));
         } else {
             $container->addCompilerPass(RegisterMappingsPass::createCouchDBMappingDriver($mappings));
         }

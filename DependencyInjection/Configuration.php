@@ -2,6 +2,7 @@
 
 namespace GGTeam\BlogBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -21,7 +22,7 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('gg_team_blog');
 
 
-        $supportedDrivers = array('orm', 'mongodb', 'couchdb', 'propel', 'custom');
+        $supportedDrivers = array('orm');
 
         $rootNode
             ->children()
@@ -34,6 +35,7 @@ class Configuration implements ConfigurationInterface
                     ->isRequired()
                     ->cannotBeEmpty()
                 ->end()
+                ->scalarNode('model_manager_name')->defaultNull()->end()
                 ->booleanNode('auto_validate_comment')->defaultTrue()->end()
                 ->arrayNode('email')
                     ->addDefaultsIfNotSet()
@@ -43,6 +45,68 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end();
 
+        $this->addArticleSection($rootNode);
+        $this->addCommentSection($rootNode);
+        $this->addTagSection($rootNode);
+
         return $treeBuilder;
+    }
+
+    private function addArticleSection(ArrayNodeDefinition $node)
+    {
+        $node
+            ->children()
+                ->arrayNode('article')
+                    ->addDefaultsIfNotSet()
+                    ->canBeUnset()
+                    ->children()
+                        ->scalarNode('article_class')->isRequired()->cannotBeEmpty()->end()
+                        ->scalarNode('article_manager')->defaultValue('gg_team_blog.article_manager.default')->end()
+                        ->arrayNode('form')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->scalarNode('type')->defaultValue('ggteam_article')->end()
+                                ->scalarNode('name')->defaultValue('ggteam_article_form')->end()
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
+    }
+
+    private function addCommentSection(ArrayNodeDefinition $node)
+    {
+        $node
+            ->children()
+                ->arrayNode('comment')
+                    ->addDefaultsIfNotSet()
+                    ->canBeUnset()
+                    ->children()
+                        ->scalarNode('comment_class')->isRequired()->cannotBeEmpty()->end()
+                        ->scalarNode('comment_manager')->defaultValue('gg_team_blog.comment_manager.default')->end()
+                        ->arrayNode('form')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->scalarNode('type')->defaultValue('ggteam_comment')->end()
+                                ->scalarNode('name')->defaultValue('ggteam_comment_form')->end()
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
+    }
+
+    private function addTagSection(ArrayNodeDefinition $node)
+    {
+        $node
+            ->children()
+                ->arrayNode('tag')
+                    ->addDefaultsIfNotSet()
+                    ->canBeUnset()
+                    ->children()
+                        ->scalarNode('tag_class')->isRequired()->cannotBeEmpty()->end()
+                    ->end()
+                ->end()
+            ->end();
     }
 }

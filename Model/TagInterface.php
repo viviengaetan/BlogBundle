@@ -21,10 +21,4 @@ interface TagInterface
      * @return TagInterface
      */
     public function setTag($tag);
-
-    /**
-     * Returns the list of articles referencing the tag
-     * @return Collection
-     */
-    public function getArticles();
 }
