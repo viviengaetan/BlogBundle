@@ -7,6 +7,9 @@ use GGTeam\BlogBundle\Form\Type\ContactType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * @author Gaëtan Verlhac <viviengaetan69@gmail.com>
+ */
 class ContactController extends Controller
 {
     public function indexAction(Request $request)

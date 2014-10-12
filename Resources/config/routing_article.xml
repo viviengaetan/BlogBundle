@@ -9,7 +9,7 @@
     <route id="gg_team_blog_article_search" path="/search/{pattern}" methods="POST">
         <default key="_controller">GGTeamBlogBundle:Front\Article:search</default>
     </route>
-    <route id="gg_team_blog_article_search_tag" path="/search/tag/{tag}" methods="POST">
+    <route id="gg_team_blog_article_search_tag" path="/searchtag/{tag}" methods="POST">
         <default key="_controller">GGTeamBlogBundle:Front\Article:searchByTag</default>
     </route>
 </routes>

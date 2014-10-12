@@ -26,7 +26,14 @@ class GGTeamBlogExtension extends Extension
         $loader->load('services.xml');
 
         if ('custom' !== $config['db_driver']) {
+            $loader->load(sprintf('%s.xml', $config['db_driver']));
             $container->setParameter($this->getAlias() . '.backend_type_' . $config['db_driver'], true);
         }
+        $container->setParameter('gg_team_blog.model.article.class', $config['article']['article_class']);
+        $container->setParameter('gg_team_blog.model.comment.class', $config['comment']['comment_class']);
+        $container->setParameter('gg_team_blog.model_manager_name', $config['model_manager_name']);
+
+        $container->setAlias('gg_team_blog.article_manager', $config['article']['article_manager']);
+        $container->setAlias('gg_team_blog.comment_manager', $config['comment']['comment_manager']);
     }
 }

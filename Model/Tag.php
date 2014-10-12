@@ -21,12 +21,6 @@ abstract class Tag implements TagInterface
     protected $tag;
 
     /**
-     * @var Collection
-     */
-    protected $articles;
-
-
-    /**
      * Constructor
      */
     public function __construct()
@@ -61,13 +55,5 @@ abstract class Tag implements TagInterface
         $this->tag = $tag;
 
         return $this;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getArticles()
-    {
-        return $this->articles;
     }
 }
